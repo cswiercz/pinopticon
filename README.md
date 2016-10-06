@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./img/pinopticon.png"><br>
+  <img src="./doc/img/pinopticon.png"><br>
 </div>
 
 Home security and monitoring with your Raspberry Pi. Created by
