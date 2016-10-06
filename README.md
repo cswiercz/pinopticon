@@ -1,32 +1,60 @@
-# Pinopticon
+<div align="center">
+  <img src="./img/pinopticon.png"><br>
+</div>
 
-Home security and monitoring with your Raspberry Pi.
+Home security and monitoring with your Raspberry Pi. Created by
+[Chris Swierczewski](https://github.com/cswiercz).
 
-Pinopticon is a Python library for managing a home security system built from a
-Raspberry Pi. Connect your home's door sensors, window sensors, and cameras.
-Receive alerts via email or text.
+Comprehensive documentation can be found at
+[http://pinopticon.readthedocs.io](http://pinopticon.readthedocs.io).
 
-Etymology: the project name is a play on the
-"[panopticon](https://en.wikipedia.org/wiki/Panopticon), a building designed
-such that every part is easily observed, derived from the Greek "*pan*-",
-meaning "wide" or "all", and "*-optic*", meaning "to see".
+# Usage
 
-## Project Goals
+A basic security system configuration. *(Note: this this still a proposal.)*
 
-The goal of Pinopticon is to implement the following features, mostly in order
-of importance. Given how early we are in the project this is, of course, subject
-to change.
+```python
+from pinopticon import *
 
-* Phase 1 - read input sensors and alert user via phone or email
-* Phase 2 - audible alarm system
-* Phase 3 - camera control
-* Phase 4 - iOS and [HomeKit](http://www.apple.com/ios/home/) compatibility
+sys = SecuritySystem()  # create a new security system config
 
-## Dependencies
+# define the connected systems using the
+# pins they're connected to on the RPi
+door = Door(21)
+alarm = Speaker(73)
+email_notification = Email('alice_and_bob@example.com')
 
-* [gpiozero](https://gpiozero.readthedocs.io/en/v1.3.1/) - *hardware control on the RPi*
-* [tornado](http://www.tornadoweb.org/en/stable/) - *future communication via phone / web*
+# set door system to execute the alarm
+# and email notification when triggered
+door.add_on_trigger(alarm)
+door.add_on_trigger(email_notification)
 
-## Authors
+# arm the system. intruders beware!
+sys.register_device(door)
+sys.arm()
+```
 
-* Chris Swierczewski ([cswiercz](https://github.com/cswiercz))
+# Install
+
+Dependencies:
+* A [Raspberry Pi](https://www.raspberrypi.org)
+* [Python 3](https://www.python.org)
+* [Flask](http://flask.pocoo.org)
+* [gpiozero](https://gpiozero.readthedocs.io)
+
+[Download Pinopticon](https://github.com/cswiercz/pinopticon/archive/master.zip)
+or open a terminal session (on your Raspberry Pi) and obtain using Git:
+
+```
+$ git clone https://github.com/cswiercz/pinopticon.git
+```
+
+Finally, open a terminal and install on your Raspberry Pi:
+
+```
+$ cd pinopticon
+$ python setup.py install
+```
+
+# License
+
+[MIT](https://github.com/cswiercz/pinopticon/blob/master/LICENSE)

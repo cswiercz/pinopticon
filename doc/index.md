@@ -5,11 +5,12 @@
 Home security and monitoring with your Raspberry Pi. Created by
 [Chris Swierczewski](https://github.com/cswiercz).
 
+Comprehensive documentation can be found at
+[http://pinopticon.readthedocs.io](http://pinopticon.readthedocs.io).
+
 # Usage
 
-A basic security system configuration.
-
-> Note: this design is not final
+A basic security system configuration. *(Note: this this still a proposal.)*
 
 ```python
 from pinopticon import *
@@ -35,10 +36,10 @@ sys.arm()
 # Install
 
 Dependencies:
-
 * A [Raspberry Pi](https://www.raspberrypi.org)
-* [`python3`](https://www.python.org)
-* [`gpiozero`](https://gpiozero.readthedocs.io)
+* [Python 3](https://www.python.org)
+* [Flask](http://flask.pocoo.org)
+* [gpiozero](https://gpiozero.readthedocs.io)
 
 [Download Pinopticon](https://github.com/cswiercz/pinopticon/archive/master.zip)
 or open a terminal session (on your Raspberry Pi) and obtain using Git:
