@@ -1,6 +1,6 @@
-# Pinopticon
-
-![](./img/pinopticon.png =250x)
+<div align="center">
+  <img src="./img/pinopticon.png"><br>
+</div>
 
 Home security and monitoring with your Raspberry Pi. Created by
 [Chris Swierczewski](https://github.com/cswiercz).
