@@ -12,8 +12,8 @@ log.setLevel(logging.INFO)
 class ObjectDetector:
 
     def __init__(
-            self, model_path='../data/detect.tflite',
-            label_path='../data/labelmap.txt', verbose=False):
+            self, model_path='/home/pi/pinopticon/data/detect.tflite',
+            label_path='/home/pi/pinopticon/data/labelmap.txt', verbose=False):
         log.info('Creating tflite interpreter from model: {0}'.format(model_path))
         self.interpreter = tf.lite.Interpreter(model_path=model_path)
         self.interpreter.allocate_tensors()
@@ -43,7 +43,7 @@ class ObjectDetector:
             self.label_map = list(map(lambda s: s.strip('\n'), f.readlines()))
 
 
-    def detect(self, image, threshold=0.4, verbose=False, **kwds):
+    def detect(self, image, threshold=0.6, verbose=False, **kwds):
         image_ = np.array(Image.fromarray(image).resize((300, 300)), dtype=np.uint8)
         self._input()[0] = image_
         self.interpreter.invoke()
