@@ -54,10 +54,8 @@ def stream_loop(camera, stream, model, target_label='person'):
             detected_person = True
             max_loops = 2 * 10
             while detected_person:
-                detected_person = False
-                for _ in range(6):
-                    camera.wait_recording(5)
-                    detected_person |= detect_labels(*args, **kwds)
+                camera.wait_recording(5)
+                detected_person = detect_labels(*args, **kwds)
 
                 max_loops -= 1
                 if max_loops <= 0:
