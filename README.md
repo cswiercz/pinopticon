@@ -1,11 +1,8 @@
 <div align="center">
-  <img src="./doc/img/pinopticon.png"><br>
+  <img src="./assets/pinopticon.png"><br>
 </div>
 
-[![Documentation Status](https://readthedocs.org/projects/pinopticon/badge/?version=latest)](http://pinopticon.readthedocs.io/en/latest/?badge=latest)
-
-Home security and monitoring with your Raspberry Pi. Created by
-[Chris Swierczewski](https://github.com/cswiercz).
+Intelligent home security and monitoring with your Raspberry Pi.
 
 # Usage
 
